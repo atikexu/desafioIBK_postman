@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "c409389f-7279-42e5-8bf6-5251b215df91",
+		"name": "DESAFIO EXCHANGERATE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8099/login?user=alan&pass=alan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8099",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "alan"
+						},
+						{
+							"key": "pass",
+							"value": "alan"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "exchangerate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGFuQ2h1bXBpdGF6Iiwic3ViIjoiYWxhbiIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MTI2NDAxOTksImV4cCI6MTcxMjY0MTM5OX0.fdlJS9OyueZXktezPxeRiyDJH73W0I7mQeCvyMXuzMYImqCiVYUa6F6mlKERIDiiOpKLmaJMdoVNGc6iSnrfxw",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 10,\r\n    \"originCurrency\": \"USD\",\r\n    \"destinationCurrency\": \"PEN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8099/api/exchangerate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8099",
+					"path": [
+						"api",
+						"exchangerate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "queryList",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "page",
+						"value": "1",
+						"type": "default"
+					},
+					{
+						"key": "size",
+						"value": "5",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGFuQ2h1bXBpdGF6Iiwic3ViIjoiYWxhbiIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MTI2NDAxOTksImV4cCI6MTcxMjY0MTM5OX0.fdlJS9OyueZXktezPxeRiyDJH73W0I7mQeCvyMXuzMYImqCiVYUa6F6mlKERIDiiOpKLmaJMdoVNGc6iSnrfxw",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8099/api/querylist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8099",
+					"path": [
+						"api",
+						"querylist"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
